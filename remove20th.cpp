@@ -133,7 +133,7 @@ void start(int center, int sum, int lost) {
 	} while (next_combination(ic, 4, 15));
 }
 
-int main(int argc, char** argv[])
+int main(int argc, char** argv)
 {
 	start(19, 57, 20);
 	printf("count %d\n", count);
