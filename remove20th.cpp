@@ -50,6 +50,38 @@ bool is_sort(int* arr, size_t size) {
 
 int count = 0;
 
+void loop1(int sum,int *x1,int *x2,int *x3, int *x4, int *x5,int *x6,int *x7,int *x8,int *x9,int *x11,
+           int *x10,int *x12,int *x13,int *x14,int *x15,int *x16,int lost,int *num_c)
+{
+    do   // Вращение среднего кольца
+    {
+        // Шесть кругов
+        if (sum == 12 + *x9 + *x3 + *x6 + *x11 + *x12)
+        {
+            if (sum == 12 + *x13 + *x10 + *x4 + *x7 + *x8)
+            {
+                if (sum == *x13 + *x14 + 18 + *x5 + *x2 + *x9)
+                {
+                    if (sum == *x14 + *x15 + 6 + *x6 + *x3 + *x10)
+                    {
+                        if (sum == *x15 + *x16 + *x11 + *x7 + *x4 + 18)
+                        {
+                            if (sum == *x16 + *x12 + *x8 + *x2 + *x5 + 6)
+                            {
+                                count++;
+                                printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",
+                                    *x1, *x2, *x3, *x4, *x5, *x6, *x7, *x8, *x9, *x10,
+                                    *x11, *x12, *x13, *x14, *x15, *x16, lost);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    while (std::next_permutation(num_c, num_c + 4));
+}
+
 void start(int center, int sum, int lost) {
 	int num17[17] = { 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20 };
 	int num15[15]; // Массив без center и lost
@@ -107,23 +139,10 @@ void start(int center, int sum, int lost) {
 								if (sum == *x14 + *x4 + *x1 + *x7 + *x12) {
 									// Слева направо
 									if (sum == *x13 + *x3 + *x1 + *x6 + *x16) {
-										do { // Вращение среднего кольца
-											// Шесть кругов
-											if (sum == 12 + *x9 + *x3 + *x6 + *x11 + *x12) {
-												if (sum == 12 + *x13 + *x10 + *x4 + *x7 + *x8) {
-													if (sum == *x13 + *x14 + 18 + *x5 + *x2 + *x9) {
-														if (sum == *x14 + *x15 + 6 + *x6 + *x3 + *x10) {
-															if (sum == *x15 + *x16 + *x11 + *x7 + *x4 + 18) {
-																if (sum == *x16 + *x12 + *x8 + *x2 + *x5 + 6) {
-																	count++;
-																	printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n", *x1, *x2, *x3, *x4, *x5, *x6, *x7, *x8, *x9, *x10, *x11, *x12, *x13, *x14, *x15, *x16, lost);
-																}
-															}
-														}
-													}
-												}
-											}
-										} while (std::next_permutation(num_c, num_c + 4));
+										loop1(sum,x1,x2,x3, x4, x5,x6,
+                                            x7,x8,x9,x11,
+                                            x10,x12,x13,x14,
+                                            x15,x16,lost,num_c);
 									}
 								}
 							}
