@@ -48,7 +48,7 @@ bool is_sort(int* arr, size_t size) {
 	return true;
 }
 
-int count = 0;
+int count = 0; // Счетчик правильных решений
 
 void start(int center, int sum, int lost) {
 	int num17[17] = { 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20 };
